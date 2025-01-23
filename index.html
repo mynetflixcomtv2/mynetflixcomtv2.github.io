@@ -32,33 +32,46 @@
       line-height: 1.6;
     }
 
-    .head {
-      background-color: #141414;
-      color: #fff;
-      padding: 15px 20px;
-      text-align: center;
-    }
+   .head {
+    background-color: #141414;
+    color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
 
-    .head img {
-      height: 40px;
-    }
+  .title a {
+    color: #e50914;
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-decoration: none;
+  }
 
-    .title a {
-      color: #e50914;
-      font-weight: 700;
-      font-size: 1.8rem;
-      text-decoration: none;
-    }
+  .menu a {
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
 
-    .menu a {
-      color: #fff;
-      text-decoration: none;
-      margin: 0 15px;
-    }
+  .menu a:hover {
+    color: #e50914;
+  }
 
-    .menu a:hover {
-      color: #e50914;
-    }
+  .menu ul {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .menu-link {
+    margin-left: 25px;
+  }
+
+  /* Logo Styling */
+  .logo {
+    height: 40px;
+    width: auto;
+  }
+
 
     .container {
       max-width: 1200px;
@@ -85,7 +98,7 @@
 
     .cta-button {
       display: inline-block;
-      background-color: #e50914;
+      background-color: #fff;
       color: #fff;
       padding: 10px 20px;
       text-align: center;
@@ -145,41 +158,155 @@
 
     @media (max-width: 768px) {
       .container {
-        padding: 20px;
-      }
-
-      h1 {
-        font-size: 1.6rem;
-      }
-
-      .menu a {
-        margin: 0 10px;
-      }
+      flex-direction: column;
+      align-items: center;
     }
+
+    .menu {
+      margin-top: 15px;
+    }
+
+    .menu-link {
+      margin-left: 0;
+      margin-right: 20px;
+    }
+  }
+  
+  .button-82-pushable {
+  position: relative;
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  outline-offset: 4px;
+  transition: filter 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  item-align:center;
+}
+
+.button-82-shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  background: hsl(0deg 0% 0% / 0.25);
+  will-change: transform;
+  transform: translateY(2px);
+  transition:
+    transform
+    600ms
+    cubic-bezier(.3, .7, .4, 1);
+}
+
+.button-82-edge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  background: linear-gradient(
+    to left,
+    hsl(340deg 100% 16%) 0%,
+    hsl(340deg 100% 32%) 8%,
+    hsl(340deg 100% 32%) 92%,
+    hsl(340deg 100% 16%) 100%
+  );
+}
+
+.button-82-front {
+  display: block;
+  position: relative;
+  padding: 12px 27px;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  color: white;
+  background: hsl(345deg 100% 47%);
+  will-change: transform;
+  transform: translateY(-4px);
+  transition:
+    transform
+    600ms
+    cubic-bezier(.3, .7, .4, 1);
+}
+
+@media (min-width: 768px) {
+  .button-82-front {
+    font-size: 1.25rem;
+    padding: 12px 42px;
+  }
+}
+
+.button-82-pushable:hover {
+  filter: brightness(110%);
+  -webkit-filter: brightness(110%);
+}
+
+.button-82-pushable:hover .button-82-front {
+  transform: translateY(-6px);
+  transition:
+    transform
+    250ms
+    cubic-bezier(.3, .7, .4, 1.5);
+}
+
+.button-82-pushable:active .button-82-front {
+  transform: translateY(-2px);
+  transition: transform 34ms;
+}
+
+.button-82-pushable:hover .button-82-shadow {
+  transform: translateY(4px);
+  transition:
+    transform
+    250ms
+    cubic-bezier(.3, .7, .4, 1.5);
+}
+
+.button-82-pushable:active .button-82-shadow {
+  transform: translateY(1px);
+  transition: transform 34ms;
+}
+
+.button-82-pushable:focus:not(:focus-visible) {
+  outline: none;
+}
   </style>
 </head>
 
 <body>
-  <!-- Header -->
-  <header class="head">
-    <div class="container d-flex justify-content-between align-items-center">
-      <div>
-        <h1 class="title"><a href="https://mynetflixcomtv2.github.io">Netflix.com/tv2</a></h1>
-      </div>
-      <nav class="menu">
-        <a href="https://mynetflixcomtv2.github.io">Home</a>
-      </nav>
+<header class="head">
+  <div class="container d-flex justify-content-between align-items-center py-3">
+    <!-- Logo and Title -->
+    <div class="d-flex align-items-center">
+      <img src="logo.png" alt="Netflix Logo" class="logo" style="height: 40px; margin-right: 10px;">
+      <h1 class="title m-0"><a href="https://mynetflixcomtv2.github.io" class="text-decoration-none">Netflix.com/tv2</a></h1>
+          <a href="https://ww0.us?aHR0cHM6Ly9teW5ldGZsaXhjb210djIuZ2l0aHViLmlv">
+     <button class="button-82-pushable" role="button">
+  <span class="button-82-shadow"></span>
+  <span class="button-82-edge"></span>
+  <span class="button-82-front text">
+    LET'S GET STARTED
+  </span>
+</button>
+        </a>
     </div>
-  </header>
+
+    <!-- Navigation Menu -->
+
+  </div>
+</header>
 
   <!-- Content -->
-  <div class="container">
-    <h1>Welcome to Netflix.com/tv2</h1>
-    <div class="text-center">
-      <a href="https://ww0.us?aHR0cHM6Ly9teW5ldGZsaXhjb210djIuZ2l0aHViLmlv">
-        <img src="getstartedhere.png" class="image img-fluid" alt="Get Started" />
-      </a>
-    </div>
+ <div class="container">
+
+
+</div>
+
 
     <h2>What is Netflix.com/tv2?</h2>
     <p>Netflix is a subscription-based streaming service renowned for its extensive library of movies, TV shows, documentaries, and original content across various genres and languages.<br><br>
